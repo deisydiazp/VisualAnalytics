@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script type="text/javascript" src="js/graphLine.js"></script>
+  <link href="./style/main.css" rel="stylesheet">
+  <link href="./style/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body onload="GraphLine()">
+	<div class="row">
+		<div class="col-lg-8">
+			<!-- /.panel -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-bar-chart-o fa-fw"></i> Peso
+					<div class="pull-right">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+								Actions
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li><a href="#">Action</a>
+								</li>
+								<li><a href="#">Another action</a>
+								</li>
+								<li><a href="#">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<div id="morris-area-chart">
+							
+					
+					</div>
+				</div>
+				<!-- /.panel-body -->
+			</div>
+			<!-- /.panel -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-bar-chart-o fa-fw"></i> Talla
+					<div class="pull-right">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+								Actions
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li><a href="#">Action</a>
+								</li>
+								<li><a href="#">Another action</a>
+								</li>
+								<li><a href="#">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover table-striped">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Date</th>
+											<th>Time</th>
+											<th>Amount</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>3326</td>
+											<td>10/21/2013</td>
+											<td>3:29 PM</td>
+											<td>$321.33</td>
+										</tr>
+										<tr>
+											<td>3325</td>
+											<td>10/21/2013</td>
+											<td>3:20 PM</td>
+											<td>$234.34</td>
+										</tr>
+										<tr>
+											<td>3324</td>
+											<td>10/21/2013</td>
+											<td>3:03 PM</td>
+											<td>$724.17</td>
+										</tr>
+										<tr>
+											<td>3323</td>
+											<td>10/21/2013</td>
+											<td>3:00 PM</td>
+											<td>$23.71</td>
+										</tr>
+										<tr>
+											<td>3322</td>
+											<td>10/21/2013</td>
+											<td>2:49 PM</td>
+											<td>$8345.23</td>
+										</tr>
+										<tr>
+											<td>3321</td>
+											<td>10/21/2013</td>
+											<td>2:23 PM</td>
+											<td>$245.12</td>
+										</tr>
+										<tr>
+											<td>3320</td>
+											<td>10/21/2013</td>
+											<td>2:15 PM</td>
+											<td>$5663.54</td>
+										</tr>
+										<tr>
+											<td>3319</td>
+											<td>10/21/2013</td>
+											<td>2:13 PM</td>
+											<td>$943.45</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- /.table-responsive -->
+						</div>
+						<!-- /.col-lg-4 (nested) -->
+						<div class="col-lg-8">
+							<div id="morris-bar-chart"></div>
+						</div>
+						<!-- /.col-lg-8 (nested) -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.panel-body -->
+			</div>
+			<!-- /.panel -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-bar-chart-o fa-fw"></i> Perímetro Cefálico
+					<div class="pull-right">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+								Actions
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li><a href="#">Action</a>
+								</li>
+								<li><a href="#">Another action</a>
+								</li>
+								<li><a href="#">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<div id="morris-area-chart"></div>
+				</div>
+				<!-- /.panel-body -->
+			</div>	
+		</div>
+		<!-- /.col-lg-8 -->
+		<div class="col-lg-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-bell fa-fw"></i> Opciones de gráfica
+				</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<form role="form">
+						<div class="form-group">
+							<label for="opTipoGrafica">Tipo de gráfica</label>
+							<select class="form-control" id="opTipoGrafica">
+								<option value="fenton">Fenton (<40 semanas)</option>
+								<option value="oms">OMS (>40 semanas)</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="opGenero">Género</label>
+							<select class="form-control" id="opTipoGrafica">
+								<option value="nina">Niña</option>
+								<option value="nino">Niño</option>
+							</select>
+						</div>
+					</form>
+  				</div>
+				<!-- /.panel-body -->
+			</div>
+			<!-- /.panel -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-bar-chart-o fa-fw"></i> Variables
+				</div>
+				<div class="panel-body">
+					<form role="form">
+						<label>Variables tipo socio - económicas</label>
+						<div class="checkbox">	
+							<label><input type="checkbox" value="nivelmama">Nivel escolaridad mamá</label>
+						</div>	
+						<div class="checkbox">	
+							<label><input type="checkbox" value="nivelpapa">Nivel escolaridad papá</label>
+						</div>	
+						<div class="checkbox">	
+							<label><input type="checkbox" value="percapita">Per cápita</label>
+						</div>	
+						<label>Variables tipo prenatales</label>
+						<div class="checkbox">
+							<label><input type="checkbox" value="edadmama">Edad mamá</label>
+						</div>	
+						<div class="checkbox">	
+							<label><input type="checkbox" value="pesomama">Peso mamá</label>
+						</div>	
+						<div class="checkbox">	
+							<label><input type="checkbox" value="pesopapa">Peso papá</label>
+						</div>	
+						<div class="checkbox">	
+							<label><input type="checkbox" value="tallamama">Talla mamá</label>
+						</div>	
+						<div class="checkbox">	
+							<label><input type="checkbox" value="tallapapa">Talla papá</label>
+						</div>	
+						<label>Variables tipo gineco-obstétricas</label>
+						<div class="checkbox">
+							<label><input type="checkbox" value="primipara">Primípara</label>
+						</div>	
+						<div class="checkbox">	
+							<label><input type="checkbox" value="numerocontrolprenatal">Número de controles prenatales</label>
+						</div>	
+						<div class="checkbox">	
+							<label><input type="checkbox" value="embarazodeseado">Embarazo deseado</label>
+						</div>
+						<label>Variables al nacimiento</label>
+						<div class="checkbox">	
+							<label><input type="checkbox" value="rciu">RCIU</label>
+						</div>
+						<div class="checkbox">	
+							<label><input type="checkbox" value="pretermino">Pretérmino</label>
+						</div>
+						<label>Alimentación</label>
+						<div class="checkbox">	
+							<label><input type="checkbox" value="tipoAlimentacion">Tipo de alimentación</label>
+						</div>
+					</form>
+				</div>
+				<!-- /.panel-body -->
+			</div>
+			<!-- /.panel -->
+			<div class="chat-panel panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-comments fa-fw"></i> Resumen
+					<div class="btn-group pull-right">
+						<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-chevron-down"></i>
+						</button>
+						<ul class="dropdown-menu slidedown">
+							<li>
+								<a href="#">
+									<i class="fa fa-refresh fa-fw"></i> Refresh
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-check-circle fa-fw"></i> Available
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-times fa-fw"></i> Busy
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-clock-o fa-fw"></i> Away
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<i class="fa fa-sign-out fa-fw"></i> Sign Out
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<ul class="chat">
+						<li class="left clearfix">
+							<span class="chat-img pull-left">
+								<img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+							</span>
+							<div class="chat-body clearfix">
+								<div class="header">
+									<strong class="primary-font">Jack Sparrow</strong>
+									<small class="pull-right text-muted">
+										<i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+									</small>
+								</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+								</p>
+							</div>
+						</li>
+						<li class="right clearfix">
+							<span class="chat-img pull-right">
+								<img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+							</span>
+							<div class="chat-body clearfix">
+								<div class="header">
+									<small class=" text-muted">
+										<i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
+									<strong class="pull-right primary-font">Bhaumik Patel</strong>
+								</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+								</p>
+							</div>
+						</li>
+						<li class="left clearfix">
+							<span class="chat-img pull-left">
+								<img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+							</span>
+							<div class="chat-body clearfix">
+								<div class="header">
+									<strong class="primary-font">Jack Sparrow</strong>
+									<small class="pull-right text-muted">
+										<i class="fa fa-clock-o fa-fw"></i> 14 mins ago</small>
+								</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+								</p>
+							</div>
+						</li>
+						<li class="right clearfix">
+							<span class="chat-img pull-right">
+								<img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+							</span>
+							<div class="chat-body clearfix">
+								<div class="header">
+									<small class=" text-muted">
+										<i class="fa fa-clock-o fa-fw"></i> 15 mins ago</small>
+									<strong class="pull-right primary-font">Bhaumik Patel</strong>
+								</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- /.panel-body -->
+				<div class="panel-footer">
+					<div class="input-group">
+						<input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+						<span class="input-group-btn">
+							<button class="btn btn-warning btn-sm" id="btn-chat">
+								Send
+							</button>
+						</span>
+					</div>
+				</div>
+				<!-- /.panel-footer -->
+			</div>
+			<!-- /.panel .chat-panel -->
+		</div>
+		<!-- /.col-lg-4 -->
+    </div>
+	<!-- jQuery -->
+    <script src="./js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./js/bootstrap.min.js"></script>
+
+</body>
